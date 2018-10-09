@@ -88,22 +88,24 @@ postscript(file = "./figures/boxplot-mean-objective-small.eps", width = 10, heig
 fig <- ggplot2::ggplot(subset(aggdata, N <= 12), ggplot2::aes(x = ALGORITHM, y = MEAN.OBJECTIVE, fill = ALGORITHM))
 fig + ggplot2::geom_boxplot() + 
   ggplot2::facet_grid(M~N, scales = "free_y", labeller = label_both) +
-  theme(strip.background = element_rect(fill = "white")) +
-  #ggplot2::ggtitle("Mean objective per heuristic and problem size") +
-  ggplot2::scale_fill_manual(name = "Heuristic", limits = algorithms.labels, labels = algorithms.names, values=c("#F0F0F0", "#787878")) +
   ggplot2::xlab("") +
   ggplot2::ylab("Mean objective") +
+  ggplot2::scale_fill_manual(name = "Heuristic: ", limits = algorithms.labels, labels = algorithms.names, values = c("#F0F0F0", "#787878")) +
+  ggplot2::theme_bw() +
   ggplot2::theme(
-    legend.position = "bottom",
-    legend.title = ggplot2::element_blank(),
-    legend.text = ggplot2::element_text(size = 14),
-    legend.key = element_rect(size = 5, color = "white"),
+    #panel.background = ggplot2::element_blank(),
+    #panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1)
+    panel.spacing = ggplot2::unit(10, units = "pt"),
     axis.title.x = ggplot2::element_blank(),
-    axis.title.y = ggplot2::element_text(size = 14, margin = ggplot2::margin(r = 15)),
     axis.text.x = ggplot2::element_blank(),
-    #axis.text.y = ggplot2::element_text(size = 12),
-    panel.background = ggplot2::element_blank(),
-    panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1))
+    axis.title.y = ggplot2::element_text(size = 18, margin = ggplot2::margin(r = 15)),
+    axis.text.y = ggplot2::element_text(size = 16),
+    legend.position = "bottom",
+    legend.title = ggplot2::element_text(size = 18),
+    legend.text = ggplot2::element_text(size = 18),
+    legend.key = element_rect(size = 5, color = "white"),
+    strip.background = element_rect(fill = "white", linetype = "blank"),
+    strip.text = ggplot2::element_text(size = 16))
 dev.off()
 
 # Large instances
@@ -112,22 +114,24 @@ postscript(file = "./figures/boxplot-mean-objective-large.eps", width = 10, heig
 fig <- ggplot2::ggplot(subset(aggdata, N >= 50), ggplot2::aes(x = ALGORITHM, y = MEAN.OBJECTIVE, fill = ALGORITHM)) 
 fig + ggplot2::geom_boxplot() + 
   ggplot2::facet_grid(M~N, scales = "free_y", labeller = label_both) +
-  theme(strip.background = element_rect(fill = "white")) +
-  #ggplot2::ggtitle("Mean objective per heuristic and problem size") +
-  ggplot2::scale_fill_manual(name = "Heuristic", limits = algorithms.labels, labels = algorithms.names, values=c("#F0F0F0", "#787878")) +
   ggplot2::xlab("") +
   ggplot2::ylab("Mean objective") +
+  ggplot2::scale_fill_manual(name = "Heuristic: ", limits = algorithms.labels, labels = algorithms.names, values = c("#F0F0F0", "#787878")) +
+  ggplot2::theme_bw() +
   ggplot2::theme(
-    legend.position = "bottom",
-    legend.title = ggplot2::element_blank(),
-    legend.text = ggplot2::element_text(size = 14),
-    legend.key = element_rect(size = 5, color = "white"),
-    axis.title.x = element_blank(),
-    axis.title.y = ggplot2::element_text(size = 14, margin = ggplot2::margin(r = 15)),
+    #panel.background = ggplot2::element_blank(),
+    #panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1)
+    panel.spacing = ggplot2::unit(10, units = "pt"),
+    axis.title.x = ggplot2::element_blank(),
     axis.text.x = ggplot2::element_blank(),
-    #axis.text.y = ggplot2::element_text(size = 12),
-    panel.background = ggplot2::element_blank(),
-    panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1))
+    axis.title.y = ggplot2::element_text(size = 18, margin = ggplot2::margin(r = 15)),
+    axis.text.y = ggplot2::element_text(size = 16),
+    legend.position = "bottom",
+    legend.title = ggplot2::element_text(size = 18),
+    legend.text = ggplot2::element_text(size = 18),
+    legend.key = element_rect(size = 5, color = "white"),
+    strip.background = element_rect(fill = "white", linetype = "blank"),
+    strip.text = ggplot2::element_text(size = 16))
 dev.off()
 
 
@@ -153,22 +157,24 @@ postscript(file = "./figures/boxplot-mean-runtime-small.eps", width = 10, height
 fig <- ggplot2::ggplot(subset(aggdata, N <= 12), ggplot2::aes(x = ALGORITHM, y = MEAN.TIME, fill = ALGORITHM))
 fig + ggplot2::geom_boxplot() + 
   ggplot2::facet_grid(M~N, scales = "free_y", labeller = label_both) +
-  theme(strip.background = element_rect(fill = "white")) +
-  #ggplot2::ggtitle("Mean runtime per heuristic and problem size") +
-  ggplot2::scale_fill_manual(name = "Heuristic", limits = algorithms.labels, labels = algorithms.names, values=c("#F0F0F0", "#787878")) +
   ggplot2::xlab("") +
   ggplot2::ylab("Mean runtime (in seconds)") +
+  ggplot2::scale_fill_manual(name = "Heuristic: ", limits = algorithms.labels, labels = algorithms.names, values = c("#F0F0F0", "#787878")) +
+  ggplot2::theme_bw() +
   ggplot2::theme(
-    legend.position = "bottom",
-    legend.title = ggplot2::element_blank(),
-    legend.text = ggplot2::element_text(size = 14),
-    legend.key = element_rect(size = 5, color = "white"),
+    #panel.background = ggplot2::element_blank(),
+    #panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1)
+    panel.spacing = ggplot2::unit(10, units = "pt"),
     axis.title.x = ggplot2::element_blank(),
-    axis.title.y = ggplot2::element_text(size = 14, margin = ggplot2::margin(r = 15)),
     axis.text.x = ggplot2::element_blank(),
-    #axis.text.y = ggplot2::element_text(size = 12),
-    panel.background = ggplot2::element_blank(),
-    panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1))
+    axis.title.y = ggplot2::element_text(size = 18, margin = ggplot2::margin(r = 15)),
+    axis.text.y = ggplot2::element_text(size = 16),
+    legend.position = "bottom",
+    legend.title = ggplot2::element_text(size = 18),
+    legend.text = ggplot2::element_text(size = 18),
+    legend.key = element_rect(size = 5, color = "white"),
+    strip.background = element_rect(fill = "white", linetype = "blank"),
+    strip.text = ggplot2::element_text(size = 16))
 dev.off()
 
 # Large instances
@@ -177,22 +183,24 @@ postscript(file = "./figures/boxplot-mean-runtime-large.eps", width = 10, height
 fig <- ggplot2::ggplot(subset(aggdata, N >= 50), ggplot2::aes(x = ALGORITHM, y = MEAN.TIME, fill = ALGORITHM)) 
 fig + ggplot2::geom_boxplot() + 
   ggplot2::facet_grid(M~N, scales = "free_y", labeller = label_both) +
-  theme(strip.background = element_rect(fill = "white")) +
-  #ggplot2::ggtitle("Mean runtime per heuristic and problem size") +
-  ggplot2::scale_fill_manual(name = "Heuristic", limits = algorithms.labels, labels = algorithms.names, values=c("#F0F0F0", "#787878")) +
   ggplot2::xlab("") +
   ggplot2::ylab("Mean runtime (in seconds)") +
+  ggplot2::scale_fill_manual(name = "Heuristic: ", limits = algorithms.labels, labels = algorithms.names, values = c("#F0F0F0", "#787878")) +
+  ggplot2::theme_bw() +
   ggplot2::theme(
-    legend.position = "bottom",
-    legend.title = ggplot2::element_blank(),
-    legend.text = ggplot2::element_text(size = 14),
-    legend.key = element_rect(size = 5, color = "white"),
-    axis.title.x = element_blank(),
-    axis.title.y = ggplot2::element_text(size = 14, margin = ggplot2::margin(r = 15)),
+    #panel.background = ggplot2::element_blank(),
+    #panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1)
+    panel.spacing = ggplot2::unit(10, units = "pt"),
+    axis.title.x = ggplot2::element_blank(),
     axis.text.x = ggplot2::element_blank(),
-    #axis.text.y = ggplot2::element_text(size = 12),
-    panel.background = ggplot2::element_blank(),
-    panel.border = ggplot2::element_rect(colour = "black", fill = NA, size = 1))
+    axis.title.y = ggplot2::element_text(size = 18, margin = ggplot2::margin(r = 15)),
+    axis.text.y = ggplot2::element_text(size = 16),
+    legend.position = "bottom",
+    legend.title = ggplot2::element_text(size = 18),
+    legend.text = ggplot2::element_text(size = 18),
+    legend.key = element_rect(size = 5, color = "white"),
+    strip.background = element_rect(fill = "white", linetype = "blank"),
+    strip.text = ggplot2::element_text(size = 16))
 dev.off()
 
 
@@ -475,3 +483,4 @@ table.results <- with(aggdata,
 
 #rownames(my.table.best) <- sort(data.instances$NAME)
 xtable(table.results, digits = c(6,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2))
+
