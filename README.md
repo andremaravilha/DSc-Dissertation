@@ -9,7 +9,7 @@
 
 ## 1. About
 
-This repository contains the source code of André's PhD dissertation entitled "Scheduling maneuvers for the restoration of electric power distribution networks".
+This repository contains the source code of André's D.Sc. dissertation entitled "Scheduling maneuvers for the restoration of electric power distribution networks".
 
 All methods were coded in C++ (version C++17). The project was developed using [CLion](https://www.jetbrains.com/clion/) with [CMake](https://cmake.org/) (version 3.9) and  GNU Compiller Collection ([GCC](https://gcc.gnu.org/), version 8.1.1) on a Linux machine running Fedora 28 (64-bits). The content of this repository is available under the MIT license. The mixed integer programming (MIP) formulations were solved with [Gurobi](http://www.gurobi.com/) (version 8.0.1).
 
